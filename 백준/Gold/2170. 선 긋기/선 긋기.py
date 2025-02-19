@@ -8,8 +8,8 @@ def length_of_line(num: int, lines: List[List[int]]) -> int:
 
     lines.sort()
 
-    newLine = lines[0]
-    for line in lines[1:]:
+    newLine: List[int] = lines[0]
+    for line in lines:
         if newLine[1] < line[0]:
             length += newLine[1] - newLine[0]
             newLine = line
@@ -26,8 +26,10 @@ def main():
     print(result)
 
 def test():
-    assert length_of_line(4, [[1, 3], [2, 5], [3, 5], [6, 7]]) == 5
+
+    result = length_of_line(10, [[1, 0], [1, 2], [1, 3], [1, 10], [1,9], [2, 1]])
 
 
 if __name__ == '__main__':
     main()
+    # test()
